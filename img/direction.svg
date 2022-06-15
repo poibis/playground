@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="108" viewBox="0 0 29 108">
+    <defs>
+        <clipPath id="yodxdiznma">
+            <path data-name="Rectangle 1551" d="M0 0h24v108H0z"/>
+        </clipPath>
+    </defs>
+    <path data-name="Rectangle 1552" style="fill:none" d="M0 0h29v108H0z"/>
+    <g data-name="Group 1085" style="clip-path:url(#yodxdiznma)" transform="translate(2.5)">
+        <path data-name="Path 1181" d="M12.5 105.033V0h-1v105.019A22.067 22.067 0 0 0 0 92.927v1.128A21.051 21.051 0 0 1 11.373 108h1.242A21.087 21.087 0 0 1 24 94.055v-1.128a22.066 22.066 0 0 0-11.5 12.106"/>
+    </g>
+</svg>
