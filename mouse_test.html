@@ -19,7 +19,7 @@
             {
                 boxClass:     'wow',      // default
                 animateClass: 'animated', // default
-                offset: 500,
+                offset: 300,
                 mobile: true,
                 live: true
             }
@@ -45,6 +45,21 @@
     /* 1024 이하는 그냥 이미지로 보여주자 .. */
     @media (max-width: 1024px) { .bg_img {transform: scale(2.2);} }
 
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 200%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translateZ(0);
+        }
+    }
+ 
+    .fadeInUp_obj {
+        position: relative;
+        animation: fadeInUp 2s;
+    }
     </style>
 </head>
 <body>
@@ -204,6 +219,11 @@
         <img class="fiu3 wow animate__animated  animate__fadeInUp" src="/img/serum_graph.png" style="margin:auto;">
         <div style="width: 1px; height: 300px;"></div>
 
+        <h1 class="manual_fi">An animated element</h1>
+        <div style="width: 1px; height: 300px;"></div>
+        <h1 class="manual_fi">An animated 222element222</h1>
+        <div style="width: 1px; height: 300px;"></div>
+        
     </div>
     <script>
         // define images
@@ -631,6 +651,24 @@
             loop: true,
             easing: 'easeInOutSine'
         });
+
+
+        $(document).ready(function() {
+            $(window).scroll( function(){
+                    
+                $('.manual_fi').each( function(i){
+                    
+                    var bottom_of_element = $(this).offset().top + $(this).outerHeight() / 3;
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    
+                    if( bottom_of_window > bottom_of_element ){
+                        $(this).addClass('fadeInUp_obj');
+                    }
+                    
+                }); 
+            });
+        });
+
     </script>
 </body>
 </html>
