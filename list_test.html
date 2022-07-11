@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="/js/anime.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <!-- animejs -->
+    <!-- wowjs -->
+    <script>
+        new WOW(
+            {
+                boxClass:     'wow',      // default
+                animateClass: 'animated', // default
+                offset: 300,
+                mobile: true,
+                live: true
+            }
+        ).init();
+    </script>
+    <style>
+
+    html, body { margin: 0px; padding: 0px; height: 100%; }
+
+    @media (min-width: 1800px)  { .bg_img {transform: scale(1.2);} .objContainer{ transform:scale(1.3); }  .obj_1{ right: 0; } }
+    @media (min-width: 1425px) and (max-width: 1800px) { .bg_img {transform: scale(1.2);}  .objContainer{ transform:scale(1.6); }  .obj_1{ right: -2%; } }
+    @media (min-width: 1225px) and (max-width: 1424px) { .bg_img {transform: scale(1.5);}  .objContainer{ transform:scale(1.7); }  .obj_1{ right: -5%; } }
+    @media (min-width: 1025px) and (max-width: 1224px) { .bg_img {transform: scale(1.8);}  .objContainer{ transform:scale(1.9); }  .obj_1{ right: -15%; } }
+
+
+    /*
+    ##Device = Tablets, Ipads (portrait),
+    ##Screen = B/w 768px to 1024px
+    ##Device = 태블릿, 아이패드(세로),
+    ##Screen = 768px에서 1024px 사이
+    */
+
+    /* 1024 이하는 그냥 이미지로 보여주자 .. */
+    @media (max-width: 1024px) { .bg_img {transform: scale(2.2);} }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 200%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translateZ(0);
+        }
+    }
+ 
+    .fadeInUp_obj {
+        position: relative;
+        animation: fadeInUp 2s;
+    }
+
+    .list_box { border:1px solid #222222; width:fit-content; padding: 30px 20px 30px 20px; text-align: center; cursor: pointer; margin-bottom: 20px; }
+    .mot2 { transition: 0.7s; }
+    .box_hover, a:hover { color:#FFFFFF; background: #222222; }
+
+    a { text-decoration: none; color:#222222; }
+    </style>
+    <script>
+        $(function() {
+            $('.list_box').on('click', function() {
+                window.open("https://loawa.com/guild/"+$(this).attr('id'), "_blank");
+            })
+
+            $('.list_box').on('mouseover', function() {
+                $(this).addClass('box_hover');
+                $('a')
+            })
+            $('.list_box').on('mouseout', function() {
+                $(this).removeClass('box_hover');
+            })
+        });
+    </script>
+</head>
+<body>
+    <div style="width: 1200px; height: auto; margin:200px auto 0 auto;">
+        <a href="https://www.inven.co.kr/board/lostark/5320?query=list&p=1&category=%EC%8B%A4%EB%A6%AC%EC%95%88&sterm=&name=subjcont&keyword=백은향" target="_blank">백은향_모집</a>
+        <div id="백은향" class="list_box mot2">백은향 (인원 53명)</div>
+
+        <a href="https://www.inven.co.kr/board/lostark/5320?query=list&p=1&category=%EC%8B%A4%EB%A6%AC%EC%95%88&sterm=&name=subjcont&keyword=고구마유치원" target="_blank">고구마유치원_모집</a>
+        <div id="고구마유치원" class="list_box mot2">고구마유치원 (인원 58명)</div>
+
+        <a href="https://www.inven.co.kr/board/lostark/5320?query=list&p=1&category=%EC%8B%A4%EB%A6%AC%EC%95%88&sterm=&name=subjcont&keyword=나엉낭낭모모" target="_blank">나엉낭낭모모_모집</a>
+        <div id="나엉낭낭모모" class="list_box mot2">나엉낭낭모모 (인원 50명)</div>
+
+        <a href="https://www.inven.co.kr/board/lostark/5320?query=list&p=1&category=%EC%8B%A4%EB%A6%AC%EC%95%88&sterm=&name=subjcont&keyword=Trua" target="_blank">Trua_모집</a>
+        <div id="Trua" class="list_box mot2">Trua (인원 40명)</div>
+
+        <a href="https://www.inven.co.kr/board/lostark/5320?query=list&p=1&category=%EC%8B%A4%EB%A6%AC%EC%95%88&sterm=&name=subjcont&keyword=%EA%B8%B0%EB%84%A4%EC%8A%A4" target="_blank">기네스_모집</a>
+        <div id="기네스" class="list_box mot2">기네스 (인원 52명)</div>
+
+        <a href="https://www.inven.co.kr/board/lostark/5320?query=list&p=1&category=%EC%8B%A4%EB%A6%AC%EC%95%88&sterm=&name=subjcont&keyword=TIE" target="_blank">TIE_모집</a>
+        <div id="TIE" class="list_box mot2">TIE (인원 43명)</div>
+    </div>
+</body>
+</html>
