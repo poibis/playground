@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    
+    <style>
+    a[data-fancybox] img {
+      cursor: zoom-in;
+    }
+    
+    .fancybox__backdrop::after {
+      content: "";
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      filter: blur(2px);
+      left: 50%;
+      top: 50%;
+      transform: scale(11);
+      opacity: 0.3;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    
+    .fancybox__container {
+      --fancybox-bg: #000;
+    
+      --fancybox-thumbs-width: 48px;
+      --fancybox-thumbs-ratio: 1;
+    
+      --carousel-button-bg: rgb(91 78 76 / 74%);
+    
+      --carousel-button-svg-width: 24px;
+      --carousel-button-svg-height: 24px;
+    
+      --carousel-button-svg-stroke-width: 2.5;
+    }
+    
+    .fancybox__nav {
+      --carousel-button-svg-width: 24px;
+      --carousel-button-svg-height: 24px;
+    }
+    
+    .fancybox__nav .carousel__button.is-prev {
+      left: 20px;
+    }
+    
+    .fancybox__nav .carousel__button.is-next {
+      right: 20px;
+    }
+    
+    .carousel__button.is-close {
+      right: auto;
+      top: 20px;
+      left: 20px;
+    }
+    
+    .fancybox__slide {
+      padding: 8px 88px;
+    }
+    
+    /* Thumbnails */
+    .fancybox__thumbs .carousel__slide {
+      padding: 8px 8px 16px 8px;
+    }
+    
+    .is-nav-selected::after {
+      display: none;
+    }
+    
+    .fancybox__thumb {
+      border-radius: 6px;
+      opacity: 0.4;
+    }
+    
+    .fancybox__thumb:hover,
+    .is-nav-selected .fancybox__thumb {
+      border-radius: 6px;
+      opacity: 1;
+    }
+    
+    .is-nav-selected .fancybox__thumb::after {
+      display: none;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="section section-top">
+        <section style="margin:0; margin-bottom:125px; margin-top:">
+            <div style="width:100%; height: 420px; vertical-align:middle; line-height:420px; text-align:center; color:#FFFFFF; background-color:#4b586a; font-size:48px; font-weight:500; background-image: url('https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/ethics_header_img.webp'); background-size: 100% 420px; background-repeat: no-repeat;">
+                부정광고를 신고하세요
+            </div>
+        </section>
+        <section style="margin:0;">
+            <div class="section-inner" style="text-align:center;">
+                <img src="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/01_KBEI.webp">
+                <div style="margin-top:40px; text-align:center; ">
+                본 신고제도는 운영의공정성과 익명성 보장을 위해<br>
+                공정거래위원회가 허가한 <b>한국기업윤리경영연구원(KBEI)</b>이 운영 하고 있습니다.
+                </div>
+                <div style="width:100%; height: 141px; border-bottom: 1px solid #DDDDDD;"></div>
+                <div style="margin: 80px 0 60px 0; font-size:36px; font-weight: 500;">플랜트 컨텐츠 심의제도</div>
+                <a data-fancybox="gallery" href="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group436.webp"><img src="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group436.webp" style="margin-bottom:60px;"></a>
+                <a data-fancybox="gallery" href="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group437.webp"><img src="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group437.webp" style="margin-bottom:200px;"></a>
+                <a data-fancybox="gallery" href="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group455.webp"><img src="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group455.webp" style="margin-bottom:200px;"></a>
+                <div style="width:960px; text-align:left;">
+                <a data-fancybox="gallery" href="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group456.webp"><img src="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group456.webp" style="margin-bottom:200px;"></a>
+                </div>
+                
+            </div>
+        </section>
+        <section style="margin:0;">
+            <div style="width: 100%; height: 808px; background-color:#eff7fe; text-align: center;">
+                <img src="https://plant-recruit.s3.ap-northeast-2.amazonaws.com/src/img/pc/ethics/group457.webp" style="margin-top:150px;" usemap="#go_ethic">
+                <map name="go_ethic">
+                <area shape="rect" coords="176,445,395,508" style='cursor:pointer;' onClick="javascript:location.href='https://www.kbei.org/center/?c=plant&ch=CH-5VTQ-5';" />
+                </map>
+            </div>
+        </section>
+    </div>
+
+
+      <div class="flex flex-wrap gap-5 justify-center max-w-5xl mx-auto px-6">
+        <a data-fancybox="gallery" href="https://lipsum.app/id/46/1600x1200">
+          <img class="rounded" src="https://lipsum.app/id/46/200x150" />
+        </a>
+        <a data-fancybox="gallery" href="https://lipsum.app/id/47/1600x1200">
+          <img class="rounded" src="https://lipsum.app/id/47/200x150" />
+        </a>
+        <a data-fancybox="gallery" href="https://lipsum.app/id/51/1600x1200">
+          <img class="rounded" src="https://lipsum.app/id/51/200x150" />
+        </a>
+      </div>
+
+    <script>
+        Fancybox.bind('[data-fancybox="gallery"]', {
+          dragToClose: false,
+    
+          Toolbar: false,
+          closeButton: "top",
+    
+          Image: {
+            zoom: false,
+          },
+    
+          on: {
+            initCarousel: (fancybox) => {
+              const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+    
+              fancybox.$container.style.setProperty(
+                "--bg-image",
+                `url("${slide.$thumb.src}")`
+              );
+            },
+            "Carousel.change": (fancybox, carousel, to, from) => {
+              const slide = carousel.slides[to];
+    
+              fancybox.$container.style.setProperty(
+                "--bg-image",
+                `url("${slide.$thumb.src}")`
+              );
+            },
+          },
+        });
+    
+    </script>
+</body>
+</html>
