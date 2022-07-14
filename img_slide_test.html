@@ -100,7 +100,45 @@
 <body>
 
 <?php
-  $ip_add = $_SERVER['REMOTE_ADDR'];
+function getRealClientIp() {
+
+  $ipaddress = '';
+
+  if (getenv('HTTP_CLIENT_IP')) {
+
+      $ipaddress = getenv('HTTP_CLIENT_IP');
+
+  } else if(getenv('HTTP_X_FORWARDED_FOR')) {
+
+      $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+
+  } else if(getenv('HTTP_X_FORWARDED')) {
+
+      $ipaddress = getenv('HTTP_X_FORWARDED');
+
+  } else if(getenv('HTTP_FORWARDED_FOR')) {
+
+      $ipaddress = getenv('HTTP_FORWARDED_FOR');
+
+  } else if(getenv('HTTP_FORWARDED')) {
+
+      $ipaddress = getenv('HTTP_FORWARDED');
+
+  } else if(getenv('REMOTE_ADDR')) {
+
+      $ipaddress = getenv('REMOTE_ADDR');
+
+  } else {
+
+      $ipaddress = '알수없음';
+
+  } 
+
+  return $ipaddress;
+
+}
+
+  $ip_add = getRealClientIp();
   echo "The user's IP address is - ".$ip_add;
 ?>
     <div class="section section-top">
