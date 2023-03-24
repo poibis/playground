@@ -1,0 +1,193 @@
+{*** 테스트영역2 | service/test_area2.php ***}
+
+{ # header }
+<style>
+	img { width:100%; height:auto; }
+	#header_wrap {
+		z-index: 3;
+		position: relative;
+		background-color: #FFFFFF;
+	}
+	.bg {
+		position: fixed;
+		top: 0;      
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url("https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_parralex_bg_area2.png"); 
+		background-size: cover;  
+		background-position: center center;
+		transform: translateZ(0);
+		will-change: transform;
+	}
+
+	.footer_fixed {
+		z-index: 1;
+		position: relative;
+		background-color: #FFFFFF;
+	}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<script src="/data/skin/front/moment/js/interaction/wow.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+
+<!-- <div>
+	<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_img1.jpg">
+</div>
+<div id="trigger_1"></div>
+<div class="imagesequence" style='width: 94%; height:auto; margin:5px auto 5px auto;' style="position:relative;">
+	<img id="myimg" src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/ps_contents_cream_vertical_00000.jpg" style="width: 100%; height: auto;">
+</div>
+<div style='width: 94%; height:auto; margin:auto;'>
+	<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_img2.jpg">
+</div>
+
+<div style='width: 100%; height:auto; margin:auto;'>
+	<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_questionmark.png">
+	<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_img3.jpg">
+</div> -->
+
+<!-- 중단 bg parallax -->
+<!-- <div class="parallax" style="background-image: url(https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_parralex_bg.png); height: 100vh; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;"> -->
+
+<div class="container">
+	<div class="bg"></div>
+	<div class="dim" style="z-index:1; position:relative; background-color:#FFFFFF; top:-54px;">
+		
+		<div style="z-index:1; position:relative;">
+			<img id="swap_img" src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_img1.png">
+			<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_img1-1.png">
+		</div>
+		<div id="trigger_1"></div>
+		<div class="imagesequence" style='z-index:1; position:relative; width: 100%; height:auto; margin:5px auto 5px auto;' style="position:relative;">
+			<img id="myimg" src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/ps_contents_cream_vertical_00000.jpg" style="width: 100%; height: auto;">
+		</div>
+		<div style='width: 100%; height:auto; margin:auto; z-index:1; position:relative;'>
+			<img id="swap_img2" src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_img2.png">
+		</div>
+		
+	</div>
+	
+	<div class="txt_bx" style="height: 123vh;  overflow: hidden; position: relative; z-index: 1; max-width: 100%; text-align: center; color: #FFFFFF;">
+		<div style="position:relative; top:45vh; width: 60%; margin: auto;">
+			<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_parralex_img1.png">
+		</div>
+		<!-- <div style="position:relative; top:60vh;">
+			<img style="width:40%;" src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_parralex_btn.png">
+		</div> -->
+	</div>
+	<!-- 중단 bg parallax -->
+
+	<!-- <div class="dim" style="z-index:1; position:relative; background-color:#FFFFFF;padding-top:120px;">
+
+		<div style='width: 100%; height:auto; margin:auto; z-index:1; position:relative; text-align: center;'>
+			<div style="height:130px; display: flex; flex-direction: column; justify-content: flex-end;">
+				<img class="animate__animated wow animate__zoomIn" data-wow-duration="1s" data-wow-delay="0.2s" src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_questionmark.png" style="max-width:20%; height:auto; text-align: center; position: absolute; top: 0; left: 40%;">
+				<div class="animate__animated wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" style="font-size:18px; line-height:2; letter-spacing:-0.54px; font-weight:normal;">덱시놀 16.3 세럼</div>
+				<div class="animate__animated wow animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" style="font-size:34px; font-weight:600; line-height:1.06; letter-spacing:-1.02px;">무엇이 다른가요?</div>
+			</div>
+			<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_img5.png" style="margin-top:100px; margin-bottom:250px; margin-left: 3%; margin-right: 3%; width: 94%;">
+		</div>
+	</div> -->
+
+
+	<div class="dim" style="z-index:1; position:relative; background-color:#FFFFFF; top:-1px;">
+		<div style='width: 100%; height:auto; margin:auto;'>
+			<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_img4.png">
+			<video src="https://player.vimeo.com/progressive_redirect/playback/776838543/rendition/360p/file.mp4?loc=external&signature=ef6cd41bc48b98b2807827bfe2d1925fd7348b65f5b3f82d5baa696ab77f203b" muted="" playsinline="" autoplay="" loop="" poster="" style="width:100%;" ></video>
+			<img src="https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/test2/tmp_img5.png" style="margin-bottom:220px;">
+
+		</div>
+
+	</div>
+	
+</div>
+<script>
+
+	new WOW().init();
+
+
+	// define images
+	let images = new Array();
+	for(var i=1; i<88; i++) {
+		/* i = i<10 ? '0'+i : i;
+		images.push('https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/ps_contents_cream_vertical_000'+i+'.jpg'); */
+		images.push('https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/ps_web_img'+i+'.jpg');
+	}
+
+	// TweenMax can tween any property of any object. We use this object to cycle through the array
+	var obj = {curImg: 0};
+
+	// create tween
+	var packageObj = TweenMax.to(obj, 0.1,
+		{
+			curImg: images.length - 1,	        // animate propery curImg to number of images
+			roundProps: "curImg",				// only integers so it can be used as an array index
+			repeat: 0,							// repeat 3 times
+			immediateRender: true,			    // load first image automatically
+			//ease: Linear.easeNone,			// show every image the same ammount of time
+			onUpdate: function () {
+				$("#myimg").attr("src", images[obj.curImg]); // set the image source
+			}
+		}
+	);
+
+	/* var packageCover = TweenMax.staggerTo('.package_trigger', 0.1, {
+		cycle: {
+			opacity: [0,1],
+			ease: [0,Power4.easeIn]
+		}
+	}); */
+
+	// init controller
+	var controller = new ScrollMagic.Controller();
+	var packageTween = new TimelineMax();
+	//packageTween.add(packageObj, 0).add(packageCover, 0);
+	packageTween.add(packageObj, 0);
+
+	// build scene
+	new ScrollMagic.Scene({
+		triggerElement: "#trigger_1",
+		duration: 250,
+		triggerHook: "0.5",
+	})
+	//.setPin(".imagesequence", {pushFollowers:true})
+	.setTween(packageTween)
+	//.addIndicators({name: "myimg (duration:500)"}) 
+	.addTo(controller);
+
+	/************************************************/
+	/************************************************/
+	/************************************************/
+	/************************************************/
+
+	$(function() {
+		$.urlParam = function(name){
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+			if (results == null) {
+				return null;
+			} else {
+				return results[1] || 0;
+			}
+		}
+
+
+		
+		
+		if( $.urlParam('img_swap') ) {
+			$('#swap_img').attr('src','https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_img1'+$.urlParam('img_swap') +'.jpg');
+			$('#swap_img2').attr('src','https://plant-design-src.s3.ap-northeast-2.amazonaws.com/images/pc/snapshot/detail/tmp_img2'+$.urlParam('img_swap') +'.jpg');
+			$('#swap_img2').css('marginTop','80px');
+			console.log($.urlParam('img_swap'));
+		} else {
+			console.log('non or null');
+		}
+	})
+</script>
+{ # footer }
